@@ -17,8 +17,6 @@ deposit(amt) => {
   }
 
 
-
-  //hello world!
 }
 
 charge(payee, amt){
