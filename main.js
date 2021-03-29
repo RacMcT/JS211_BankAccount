@@ -4,11 +4,12 @@ class BankAccount{
     this.owner = owner;
     this.transactions = [];
   }
-
+//show bank account balance
 balance(){
   let result = this.transactions.reduce((acc, transact) => acc + transact.amount , 0)
   console.log(result.toFixed(2))
 }
+//deposit $$ into account & checks that it's a positive dollar amount
 deposit(amt){
   this.amt = parseInt(amt);
   if (amt <= 0){
@@ -16,8 +17,9 @@ deposit(amt){
   } 
   if (amt > 0){
     let transaction = new Transaction(amt, this.owner)
-    console.log ("thank you for your deposit of: " + this.amt)
+    console.log ("thank you" + this.owner +" for your deposit of: " + this.amt)
   }
+//charges made against the account balance
   charge(payee, amt);{
     let amount = Math.abs(amt) * -1
     let transaction = new Transaction(amount, payee)
